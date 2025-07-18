@@ -28,7 +28,7 @@ mongoose.connect(MONGO_URI)
 // ✅ Middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: "http://localhost:5174", credentials: true }));
+app.use(cors({ origin: "https://hirebase.vercel.app", credentials: true }));
 
 // ✅ Test route
 app.use("/api/v1/user",userRoute);
