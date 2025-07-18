@@ -1,0 +1,10 @@
+import express from 'express';
+import authenticate from '../middlewares/auth.js';
+import { applyJob ,  getApplications  ,  getApplicants  , updateStatus } from '../controllers/applications.controller.js';
+const router = express.Router();
+console.log("✅ applications.route.js reached");
+router.route('/apply/:id').post( authenticate,applyJob);
+router.route('/get').get( authenticate,getApplications);    
+router.route('/applicants/:id').get(authenticate, getApplicants);
+router.route('/updateStatus/:id').post(authenticate, updateStatus);
+export default router;
